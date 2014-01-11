@@ -1,4 +1,5 @@
 class WechatsController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   before_filter :check_signature
 
   def show
@@ -6,7 +7,9 @@ class WechatsController < ApplicationController
   end
 
   def create
-    
+    if params[:xml][:MsgType] == "text"
+      render "text", :formats => :xml 
+    end
   end
 
   private
