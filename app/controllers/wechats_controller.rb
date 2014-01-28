@@ -7,8 +7,14 @@ class WechatsController < ApplicationController
   end
 
   def create
-    if params[:xml][:MsgType] == "text"
-      render "text", :formats => :xml 
+    message_type = params[:xml][:MsgType]
+    if message_type == "text"
+      message_content = params[:xml][:Content]
+      if message_content == 'tq'
+        render "tq", :formats => :xml
+      else
+        render "text", :formats => :xml 
+      end
     end
   end
 
