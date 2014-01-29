@@ -1,4 +1,5 @@
 WechatPublic::Application.routes.draw do
+  get "users/new"
   resources :wechat
   root to: 'static_pages#index'
   match '/help', to: 'static_pages#help', via: 'get'
