@@ -1,4 +1,4 @@
-source 'http://ruby.taobao.org'
+source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
@@ -48,6 +48,3 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-group :production do
-  gem 'pg'
-end
