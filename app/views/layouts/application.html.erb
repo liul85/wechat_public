@@ -37,7 +37,6 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
-
     <div class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
@@ -48,9 +47,9 @@
           </a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Home", root_path  %></li>
-              <li><%= link_to "Help", help_path  %></li>
-              <li><%= link_to "Sign up", new_user_path  %></li>
+              <li><%= link_to "首页", root_path  %></li>
+              <li><%= link_to "帮助", help_path  %></li>
+              <li><%= link_to "注册", new_user_path  %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -62,13 +61,14 @@
           <div class="span9">
             <%= bootstrap_flash %>
             <%= yield %>
+            <%= debug(params) if Rails.env.development? %>
           </div>
           <div class="span3">
             <div class="well sidebar-nav">
               <ul class="nav nav-list">
-                <li><%= link_to "Sign in", "#"  %></li>
-                <li><%= link_to "About", about_path  %></li>
-                <li><%= link_to "News", '#'  %></li>
+                <li><%= link_to "登录", "#"  %></li>
+                <li><%= link_to "关于", about_path  %></li>
+                <li><%= link_to "新闻", '#'  %></li>
               </ul>
             </div><!--/.well -->
           </div><!--/span-->

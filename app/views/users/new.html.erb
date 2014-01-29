@@ -1,22 +1,23 @@
-<% provide(:title, "Sign Up") %>
-<h1>Sign up</h1>
+<% provide(:title, "注册") %>
+<h1>欢迎注册</h1>
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
-      <%= f.label :name %>
+      <%= render 'shared/error_messages' %>
+      <%= f.label '用户名' %>
       <%= f.text_field :name %>
 
-      <%= f.label :email %>
+      <%= f.label '邮箱' %>
       <%= f.text_field :email %>
 
-      <%= f.label :password %>
+      <%= f.label '密码' %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label '确认密码' %>
       <%= f.password_field :password_confirmation %>
       <p></p>
 
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+      <%= f.submit "注册", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div>
